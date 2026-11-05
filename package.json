@@ -1,0 +1,16 @@
+{
+  "name": "cartoon-boy-runner",
+  "version": "1.0.0",
+  "description": "My first Android game",
+  "private": true,
+  "scripts": {
+    "build": "echo Game ready"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/android": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}
