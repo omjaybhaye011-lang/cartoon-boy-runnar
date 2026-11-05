@@ -6,15 +6,19 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -28,12 +32,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Prepare game files
+      - name: Prepare game
         run: |
           mkdir -p www
           cp index.html www/index.html
 
-      - name: Create Android project
+      - name: Add Android platform
         run: npx cap add android
 
       - name: Sync Android
